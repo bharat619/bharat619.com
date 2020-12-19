@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "bharat",
+    siteUrl: "https://bharat619.netlify.app/",
   },
   plugins: [
     // {
