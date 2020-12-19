@@ -3,20 +3,37 @@ module.exports = {
     title: "bharat",
   },
   plugins: [
-    {
-      resolve: "gatsby-source-sanity",
-      options: {
-        projectId: "cxt4fusl",
-        dataset: "",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-sanity",
+    //   options: {
+    //     projectId: "cxt4fusl",
+    //     dataset: "production",
+    //   },
+    // },
     "gatsby-plugin-styled-components",
+    // {
+    //   resolve: "gatsby-plugin-google-analytics",
+    //   options: {
+    //     trackingId: "",
+    //   },
+    // },
+    "gatsby-plugin-sitemap",
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        trackingId: "",
+        rule: {
+          include: /assets/,
+        },
       },
     },
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/image`,
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
   ],
 };
