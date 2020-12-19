@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-import whiteGrit from "./whiteGrit.png";
-import blackGrit from "./blackGrit.png";
+import whiteGrit from "./whitegrit.png";
+import blackGrit from "./blackgrit.png";
 
 const HEADING_SIZE = {
   h1: 5,
