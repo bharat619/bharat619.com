@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-import whiteGrit from "./whitegrit.png";
-import blackGrit from "./blackgrit.png";
+import whiteGrit from "./whiteGrit.png";
+import blackGrit from "./blackGrit.png";
 
 const HEADING_SIZE = {
   h1: 5,
@@ -74,7 +74,7 @@ const HeaderStyle = styled.h1`
     text-decoration-color: var(--yellow);
   }
 
-  @media (max-width: 00px) {
+  @media (max-width: 600px) {
     font-size: 2rem;
   }
 `;
