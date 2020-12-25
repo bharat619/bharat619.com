@@ -5,7 +5,7 @@ import whiteGrit from "./whitegrit.png";
 import blackGrit from "./blackgrit.png";
 
 const HEADING_SIZE = {
-  h1: 5,
+  h1: 4.5,
   h2: 4,
   h3: 3,
   h4: 2.5,
@@ -24,9 +24,10 @@ const animation = keyframes`
   }
 `;
 
-const HeaderStyle = styled.h1`
+export const HeaderStyle = styled.h1`
   font-size: ${HEADING_SIZE.h1}rem;
   font-size: ${({ as }) => as && `${HEADING_SIZE[as]}rem`};
+  font-family: radnika, sans-serif;
   position: relative;
   transform: rotate(var(--rotate));
 
