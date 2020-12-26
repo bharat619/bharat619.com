@@ -5,6 +5,7 @@ import "normalize.css";
 import Nav from "./Nav";
 import GlobalStyles from "./styles/GlobalStyles";
 import styled from "styled-components";
+import Footer from "./Footer";
 
 const ContentStyle = styled.div`
   margin: 0px auto;
@@ -16,26 +17,12 @@ const AppContainer = styled.div`
 `;
 
 export default function Layout({ children, location }) {
-  const data = useStaticQuery(
-    graphql`
-      {
-        file(relativePath: { eq: "me.jpg" }) {
-          childImageSharp {
-            original {
-              src
-            }
-          }
-        }
-      }
-    `
-  );
-
-  // console.log(data.file.childImageSharp.original.src);
   return (
     <AppContainer>
       <GlobalStyles></GlobalStyles>
       <Nav></Nav>
       <ContentStyle>{children}</ContentStyle>
+      <Footer></Footer>
     </AppContainer>
   );
 }

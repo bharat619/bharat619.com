@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { HeaderStyle } from "../components/styles/Heading";
 import styled, { keyframes } from "styled-components";
 import useSalutations from "../helpers/useSalutation";
@@ -35,6 +33,7 @@ const Salutation = styled(HeaderStyle)`
 
 const AboutMeWrapper = styled.div`
   margin-top: 10rem;
+  font-family: monospace;
   @media (max-width: 600px) {
     margin-top: 5rem;
   }
@@ -56,6 +55,7 @@ const AboutMeWrapper = styled.div`
 
   div.fullstack {
     max-width: 700px;
+    font-family: radnika, sans-serif;
     margin: 0px auto;
     padding: 5px;
     font-style: italic;
@@ -76,27 +76,32 @@ const AboutMeWrapper = styled.div`
     }
   }
 
-  div.body {
+  div.content-item {
     line-height: 4.5rem;
     font-size: 2rem;
-    font-family: monospace;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     @media (max-width: 600px) {
       font-size: 1.5rem;
+    }
+    span.here {
+      border-bottom: 5px solid var(--yellow);
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 `;
 
 const IndexPage = () => {
-  useEffect(() => {
-    AOS.init();
-  });
-
   const [salutation, setSalutation, randomizeSalutation] = useSalutations();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       const sal = randomizeSalutation();
-      setSalutation(sal);
+      setSalutation((prev) => {
+        if (prev !== sal) return sal;
+      });
     }, 2000);
     return () => {
       clearTimeout(timer);
@@ -117,9 +122,20 @@ const IndexPage = () => {
           Your friendly neighbourhood <b>Fullstack-Dev</b> <span>👨‍💻</span>
         </div>
 
-        <div className="body">
-          I'm from India 🇮🇳 <br /> It's been about {years} years since I started
-          working or about {days} days...!
+        <div className="content-item">I'm from India 🇮🇳</div>
+
+        <div className="content-item">
+          It's been about {years} years since I started working or about {days}{" "}
+          days...!
+        </div>
+
+        <div className="content-item">
+          You can know <span className="here"> more about my work here</span>
+        </div>
+
+        <div className="content-item">
+          Feel free to reach out to me any time on my email{" "}
+          <span className="here">baru.hegde@gmail.com</span>
         </div>
       </div>
     </AboutMeWrapper>

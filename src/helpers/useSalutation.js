@@ -20,7 +20,20 @@ const getRandomInt = () => parseInt(Math.floor(Math.random() * MAX));
 export default function useSalutations() {
   const [salutation, setSalutation] = useState(SALUTATIONS[getRandomInt()]);
 
-  const randomizeSalutation = () => SALUTATIONS[getRandomInt()];
+  const [idx, setIdx] = useState(0);
+
+  const randomizeSalutation = () => {
+    setIdx((prev) => {
+      const newIdx = getRandomInt();
+      if (prev !== newIdx) {
+        return newIdx;
+      } else {
+        return 0;
+      }
+    });
+
+    return SALUTATIONS[idx];
+  };
 
   return [salutation, setSalutation, randomizeSalutation];
 }
