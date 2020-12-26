@@ -24,7 +24,7 @@ const animation = keyframes`
   }
 `;
 
-const HeaderStyle = styled.h1`
+export const HeaderStyle = styled.h1`
   font-size: ${HEADING_SIZE.h1}rem;
   font-size: ${({ as }) => as && `${HEADING_SIZE[as]}rem`};
   position: relative;
