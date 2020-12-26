@@ -59,6 +59,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     min-height: calc(100vh - 40px);
     font-size: 2rem;
+
   }
   *, *:before, *:after {
     box-sizing: inherit;

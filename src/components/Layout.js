@@ -17,21 +17,6 @@ const AppContainer = styled.div`
 `;
 
 export default function Layout({ children, location }) {
-  const data = useStaticQuery(
-    graphql`
-      {
-        file(relativePath: { eq: "me.jpg" }) {
-          childImageSharp {
-            original {
-              src
-            }
-          }
-        }
-      }
-    `
-  );
-
-  // console.log(data.file.childImageSharp.original.src);
   return (
     <AppContainer>
       <GlobalStyles></GlobalStyles>

@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { HeaderStyle } from "../components/styles/Heading";
 import styled, { keyframes } from "styled-components";
 import useSalutations from "../helpers/useSalutation";
@@ -96,10 +94,6 @@ const AboutMeWrapper = styled.div`
 `;
 
 const IndexPage = () => {
-  useEffect(() => {
-    AOS.init();
-  });
-
   const [salutation, setSalutation, randomizeSalutation] = useSalutations();
 
   useEffect(() => {
