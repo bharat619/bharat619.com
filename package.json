@@ -33,6 +33,7 @@
     "gatsby-source-sanity": "^6.0.4",
     "gatsby-transformer-sharp": "^2.9.0",
     "netlify-cli": "^2.69.11",
+    "netlify-lambda": "^2.0.2",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
