@@ -52,7 +52,12 @@ const getIgPosts = async () => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((response) => response.text().then((data) => JSON.parse(data)));
+  }).then((response) =>
+    response.text().then((data) => {
+      console.log(data);
+      return JSON.parse(data);
+    })
+  );
 };
 
 export default function Instagram() {
