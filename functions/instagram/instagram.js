@@ -20,6 +20,7 @@ exports.handler = async (event, context) => {
         id: edge.node.id,
         thumbnail: edge.node.thumbnail_resources[4].src,
         url: `https://instagram.com/p/${edge.node.shortcode}`,
+        alt: edge.node.text,
       })
     );
 
