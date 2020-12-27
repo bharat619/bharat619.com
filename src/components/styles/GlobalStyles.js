@@ -65,6 +65,11 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: inherit;
   }
 
+  a {
+      text-decoration: none;
+      color: var(--black);
+    }
+
 `;
 
 export default GlobalStyles;
