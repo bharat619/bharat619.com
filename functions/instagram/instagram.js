@@ -20,7 +20,7 @@ const loadIgPosts = async () => {
     );
     cached_data.posts = igPosts;
   }
-  console.log(igPosts);
+
   return cached_data.posts;
 };
 

@@ -42,6 +42,9 @@ const GridStyle = styled.div`
   @media (max-width: 925px) {
     width: 424px;
   }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
   margin-top: -4%;
   p {
     font-size: 1.5rem;
