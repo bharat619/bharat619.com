@@ -4,7 +4,7 @@ const cached_data = {
   posts: null,
 };
 
-const query = `https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"2157021316","first":6, "after":""}`;
+const query = `https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"2157021316","first":"6", "after":""}`;
 
 const loadIgPosts = async () => {
   let igPosts = null;
@@ -20,6 +20,7 @@ const loadIgPosts = async () => {
     );
     cached_data.posts = igPosts;
   }
+  console.log(igPosts);
   return cached_data.posts;
 };
 
