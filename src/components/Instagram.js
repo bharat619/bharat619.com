@@ -5,10 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 const InstaWrapper = styled.div`
   display: grid;
   grid-template-rows: auto auto;
-  background: white;
-
   color: black;
-
   justify-items: center;
 
   .mark {
@@ -31,6 +28,7 @@ const InstaWrapper = styled.div`
 `;
 
 const GridStyle = styled.div`
+  background: white;
   padding: 0.5rem;
   img {
     max-width: 100%;
@@ -43,7 +41,7 @@ const GridStyle = styled.div`
     grid-template-columns: 1fr;
     width: 100%;
   }
-  margin-top: -6%;
+  margin-top: -4%;
 `;
 
 const getIgPosts = async () => {
@@ -54,7 +52,6 @@ const getIgPosts = async () => {
     },
   }).then((response) =>
     response.text().then((data) => {
-      console.log(data);
       return JSON.parse(data);
     })
   );
@@ -69,6 +66,25 @@ export default function Instagram() {
     });
   }, []);
 
+  if (!igPosts.length) {
+    return (
+      <InstaWrapper>
+        <a
+          href="https://www.instagram.com/one_armed_wolf_/"
+          target="_blank"
+          className="mark"
+        >
+          <p>
+            &nbsp; <FaInstagram /> &nbsp; @one_armed_wolf_ &nbsp;
+          </p>
+        </a>
+        <GridStyle>
+          <br />
+          Loading Some Snaps...
+        </GridStyle>
+      </InstaWrapper>
+    );
+  }
   return (
     <InstaWrapper>
       <a
