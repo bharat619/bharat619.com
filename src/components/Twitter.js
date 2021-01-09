@@ -77,7 +77,22 @@ export default function () {
   const tweets = useTweets();
 
   if (!tweets.length) {
-    return <p>Hang on!! Tweets are flying in...</p>;
+    return (
+      <TwitterWrapper>
+        <a
+          href="https://twitter.com/bharat619_hegde"
+          target="_blank"
+          className="mark"
+        >
+          <p>
+            &nbsp; <FaTwitter /> &nbsp; @bharat619_hegde &nbsp;
+          </p>
+        </a>
+        <GridStyle>
+          <p>Hang on!! Tweets are flying in...</p>;
+        </GridStyle>
+      </TwitterWrapper>
+    );
   }
   return (
     <TwitterWrapper>

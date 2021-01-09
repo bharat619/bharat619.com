@@ -66,6 +66,25 @@ export default function Instagram() {
     });
   }, []);
 
+  if (!igPosts.length) {
+    return (
+      <InstaWrapper>
+        <a
+          href="https://www.instagram.com/one_armed_wolf_/"
+          target="_blank"
+          className="mark"
+        >
+          <p>
+            &nbsp; <FaInstagram /> &nbsp; @one_armed_wolf_ &nbsp;
+          </p>
+        </a>
+        <GridStyle>
+          <br />
+          Loading Some Snaps...
+        </GridStyle>
+      </InstaWrapper>
+    );
+  }
   return (
     <InstaWrapper>
       <a
