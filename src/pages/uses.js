@@ -1,6 +1,7 @@
 import React from "react";
+
 import styled from "styled-components";
-import { Salutation } from "./index";
+import { HeaderStyle } from "../components/styles/Heading";
 
 const UsesWrapper = styled.div`
   margin-top: 10rem;
@@ -15,7 +16,7 @@ const UsesWrapper = styled.div`
   }
 `;
 
-const Heading = styled(Salutation)`
+const Heading = styled(HeaderStyle)`
   span {
     &:before {
       width: 0.75em;
@@ -28,6 +29,7 @@ const Heading = styled(Salutation)`
       transform: translateX(var(--translate)) translateY(var(--translate))
         rotate(0deg);
     }
+    transform: none;
     border-bottom: none;
   }
 `;

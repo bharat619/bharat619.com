@@ -16,7 +16,7 @@ const animation = keyframes`
   }
 `;
 
-const Salutation = styled(HeaderStyle)`
+export const Salutation = styled(HeaderStyle)`
   span.girt {
     background: none;
     &:hover {
