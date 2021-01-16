@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 
 import styled from "styled-components";
 import Header from "./styles/Heading";
+import pdf from '../static/resume.pdf'
 
 const NavContainer = styled.div`
   display: grid;
@@ -95,9 +96,9 @@ export default function () {
             </Link>
           </li>
           <li>
-            <Link to="/">
+            <a href={pdf} target="_blank">
               <Header as="span">My Resume</Header>
-            </Link>
+            </a>
           </li>
           <li>
             <Link to="/">
