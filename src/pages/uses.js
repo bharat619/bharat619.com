@@ -29,9 +29,10 @@ const Heading = styled(HeaderStyle)`
       transform: translateX(var(--translate)) translateY(var(--translate))
         rotate(0deg);
     }
-    transform: none;
     border-bottom: none;
   }
+
+  transform: none !important;
 `;
 
 export default function Uses() {
@@ -88,8 +89,9 @@ export default function Uses() {
         <span>Some useful extensions</span>
       </Heading>
       <p>
-        These are some interesting browser extensions that I really liked, and
-        comes in handy
+        Apart from a lot of <i>DevTools</i> kinda extensions, these are some
+        interesting browser extensions that I really like, and they are pretty
+        handy sometimes.
         <ul>
           <li>
             <u>
@@ -97,13 +99,41 @@ export default function Uses() {
                 OctoTree for Github
               </a>
             </u>{" "}
-            Gives a nice sidebar for code / file navigation in github
+            Gives a nice sidebar for code / file navigation option in github
           </li>
           <li>
             <u>
               <a href="https://www.screencastify.com/">Screencastify</a>
             </u>{" "}
-            Simple and one of the best screen recorders
+            Simple and one of the best screen recorders, in case you want to
+            record a quick demo or something...
+          </li>
+          <li>
+            <u>
+              {" "}
+              <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en%20">
+                ColorPick Eyedropper
+              </a>
+            </u>{" "}
+            If you want to know what color is used in any webpage or even any
+            image, this is a great tool for that.
+          </li>
+          <li>
+            <u>
+              <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en%20">
+                JSONView
+              </a>
+            </u>{" "}
+            Nice tool to read the API response in a tree, rather than raw format
+          </li>
+          <li>
+            <u>
+              <a href="https://chrome.google.com/webstore/detail/page-ruler-redux/giejhjebcalaheckengmchjekofhhmal?hl=en">
+                Page Ruler Redux
+              </a>
+            </u>{" "}
+            Great measurement tool for all the dimensions, positions and other
+            page measurement shinanigans
           </li>
         </ul>
       </p>
