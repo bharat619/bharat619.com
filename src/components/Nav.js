@@ -101,7 +101,7 @@ export default function () {
             </a>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/uses">
               <Header as="span">/uses</Header>
             </Link>
           </li>
