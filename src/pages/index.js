@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 import useSalutations from "../helpers/useSalutation";
 import calculateMyWorkExperience from "../helpers/calculateMyWorkExperience";
 
-const animation = keyframes`
+export const animation = keyframes`
   from {
     top: -7rem;
     opacity: 0;
@@ -31,7 +31,7 @@ const Salutation = styled(HeaderStyle)`
   animation: ${animation} 0.4s;
 `;
 
-const AboutMeWrapper = styled.div`
+export const AboutMeWrapper = styled.div`
   margin-top: 10rem;
   font-family: monospace;
   @media (max-width: 600px) {
