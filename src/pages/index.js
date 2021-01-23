@@ -5,6 +5,7 @@ import { HeaderStyle } from "../components/styles/Heading";
 import styled, { keyframes } from "styled-components";
 import useSalutations from "../helpers/useSalutation";
 import calculateMyWorkExperience from "../helpers/calculateMyWorkExperience";
+import SEO from "../components/SEO";
 
 const animation = keyframes`
   from {
@@ -111,40 +112,43 @@ const IndexPage = () => {
   });
   const [years, days] = calculateMyWorkExperience();
   return (
-    <AboutMeWrapper>
-      <Salutation as="h1">
-        <span>{salutation},</span>
-      </Salutation>
-      <div className="content">
-        <div className="my-name">
-          I'm &nbsp;
-          <span className="title">Bharat Hegde.</span>
-        </div>
-        <div className="fullstack">
-          Your friendly neighbourhood <b>Fullstack-Dev</b> <span>👨‍💻</span>
-        </div>
+    <>
+      <SEO title="Home"></SEO>
+      <AboutMeWrapper>
+        <Salutation as="h1">
+          <span>{salutation},</span>
+        </Salutation>
+        <div className="content">
+          <div className="my-name">
+            I'm &nbsp;
+            <span className="title">Bharat Hegde.</span>
+          </div>
+          <div className="fullstack">
+            Your friendly neighbourhood <b>Fullstack-Dev</b> <span>👨‍💻</span>
+          </div>
 
-        <div className="content-item">I'm from India 🇮🇳</div>
+          <div className="content-item">I'm from India 🇮🇳</div>
 
-        <div className="content-item">
-          It's been about {years} years since I started working or about {days}{" "}
-          days...!
-        </div>
+          <div className="content-item">
+            It's been about {years} years since I started working or about{" "}
+            {days} days...!
+          </div>
 
-        <div className="content-item">
-          You can know{" "}
-          <span className="here">
-            {" "}
-            <Link to="/my-work">more about my work here</Link>{" "}
-          </span>
-        </div>
+          <div className="content-item">
+            You can know{" "}
+            <span className="here">
+              {" "}
+              <Link to="/my-work">more about my work here</Link>{" "}
+            </span>
+          </div>
 
-        <div className="content-item">
-          Feel free to reach out to me any time on my email{" "}
-          <span className="here">baru.hegde@gmail.com</span>
+          <div className="content-item">
+            Feel free to reach out to me any time on my email{" "}
+            <span className="here">bharat_619@outlook.com</span>
+          </div>
         </div>
-      </div>
-    </AboutMeWrapper>
+      </AboutMeWrapper>
+    </>
   );
 };
 
