@@ -17,7 +17,7 @@ import { HeaderStyle } from "../components/styles/Heading";
 
 const SectionHeader = styled(HeaderStyle)`
   font-weight: bold;
-  font-size: 3rem;
+
   &:before {
     width: 0.75em;
     height: 0.75em;
@@ -53,6 +53,11 @@ const ListWrapper = styled.div`
 const List = styled.ul`
   list-style: none;
   line-height: 2;
+  li {
+    @media (max-width: 400px) {
+      font-size: 14px;
+    }
+  }
 `;
 
 const Link = styled.a`
@@ -64,8 +69,9 @@ export default function MyWork() {
     <MyWorkWrapper>
       <SectionHeader as="span">Where I work?</SectionHeader>
       <p>
-        Currently I work with Kiprosh, a wonderful folks to work with. Have a
-        look at it over <span className="mark">here</span>
+        Currently I work with{" "}
+        <Link href="https://www.kiprosh.com">Kiprosh</Link>, a wonderful bunch
+        of folks who do pretty cool stuff!!
       </p>{" "}
       <br /> <br />
       <SectionHeader as="span">
@@ -135,54 +141,19 @@ export default function MyWork() {
         .
       </p>
       <p>
-        In case if you are interested about this site, its built using Gatsby...
-        You can find the source code{" "}
+        In case if you are interested about this site, its built using Gatsby.
+        The services to fetch the Instagram and Twitter posts are done using
+        serverless functions. You can find all the source code{" "}
         <Link href="https://github.com/bharat619/bharat619.com">here</Link>
       </p>
       <br />
       <br />
       <div>
         <p>
-          Apart from that I do like to explore on new tech stacks, improve my
+          Apart from that, I do like to explore on new tech stacks, improve my
           technique and styles, write blogs...
         </p>
       </div>
-      {/* <div className="">
-        <p>I have worked with</p>
-        <ul>
-          <li>JavaScript</li>
-          <li>Ruby</li>
-          <li>NodeJS</li>
-        </ul>
-        <p>Focusing more onto the libaries / frameworks. I have used</p>
-        <ul>
-          <li>React</li>
-          <li>Express</li>
-          <li>Ruby on Rails</li>
-          <li>NextJS</li>
-          <li>Gatsby</li>
-          <li>Lambda</li>
-        </ul>
-      </div>
-      <div>
-        <p>
-          The kind of projects that I have worked till now are in the domain of
-          Banking, Insurance, CRM and E-commerce
-        </p>
-      </div>
-      <div>
-        <p>Check out my GitHub profile here</p>
-      </div>
-      <div>
-        In case if you are interested about this site, its built using Gatsby...
-        You can find the source code here
-      </div>
-      <div>
-        <p>
-          Apart from that I do like to learn new technologies, improve technique
-          and style, write blogs...
-        </p>
-      </div> */}
     </MyWorkWrapper>
   );
 }

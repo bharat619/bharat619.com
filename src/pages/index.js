@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { Link } from "gatsby";
+
 import { HeaderStyle } from "../components/styles/Heading";
 import styled, { keyframes } from "styled-components";
 import useSalutations from "../helpers/useSalutation";
@@ -130,7 +132,11 @@ const IndexPage = () => {
         </div>
 
         <div className="content-item">
-          You can know <span className="here"> more about my work here</span>
+          You can know{" "}
+          <span className="here">
+            {" "}
+            <Link to="/my-work">more about my work here</Link>{" "}
+          </span>
         </div>
 
         <div className="content-item">
