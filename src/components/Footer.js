@@ -15,11 +15,13 @@ const FooterStyle = styled.div`
   }
 `;
 
+const copyrightsYear = new Date().getFullYear();
+
 export default function Footer() {
   return (
     <FooterStyle>
       <SocialMedia></SocialMedia>
-      <div className="trademark">Bharat Hegde © 2020</div>
+      <div className="trademark">Bharat Hegde © {copyrightsYear}</div>
     </FooterStyle>
   );
 }
