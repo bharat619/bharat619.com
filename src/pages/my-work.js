@@ -14,6 +14,7 @@ import {
 import { IoLogoNodejs } from "react-icons/io";
 
 import { HeaderStyle } from "../components/styles/Heading";
+import SEO from "../components/SEO";
 
 const SectionHeader = styled(HeaderStyle)`
   font-weight: bold;
@@ -66,94 +67,97 @@ const Link = styled.a`
 
 export default function MyWork() {
   return (
-    <MyWorkWrapper>
-      <SectionHeader as="span">Where I work?</SectionHeader>
-      <p>
-        Currently I work with{" "}
-        <Link href="https://www.kiprosh.com">Kiprosh</Link>, a wonderful bunch
-        of folks who do pretty cool stuff!!
-      </p>{" "}
-      <br /> <br />
-      <SectionHeader as="span">
-        What Languages I have worked with?
-      </SectionHeader>
-      <p>I have worked with</p>
-      <ListWrapper>
-        <List>
-          <li>
-            <SiJavascript></SiJavascript> JavaScript
-          </li>
-          <li>
-            <SiRuby></SiRuby> Ruby
-          </li>
-          <li>
-            <IoLogoNodejs></IoLogoNodejs> NodeJS
-          </li>
-        </List>
-      </ListWrapper>
-      <br /> <br />
-      <SectionHeader as="span">
-        What Libraries and Frameworks I work with?
-      </SectionHeader>
-      <p>Focusing more onto the libaries / frameworks. I have used</p>
-      <ListWrapper>
-        <List>
-          <li>
-            <SiReact></SiReact> React
-          </li>
-          <li>
-            <IoLogoNodejs></IoLogoNodejs> Express
-          </li>
-          <li>
-            <SiRails></SiRails> Ruby on Rails
-          </li>
-        </List>
-        <List>
-          <li>
-            <SiNextDotJs></SiNextDotJs> NextJS
-          </li>
-          <li>
-            <SiGatsby></SiGatsby> Gatsby
-          </li>
-          <li>
-            <SiAzurefunctions></SiAzurefunctions> Lambda
-          </li>
-        </List>
-      </ListWrapper>
-      <p>
-        Recently I have started working with <SiIonic></SiIonic>Ionic React.
-        Gotta say, Im lovin it...!
-      </p>
-      <br />
-      <div>
+    <>
+      <SEO title="My Work"></SEO>
+      <MyWorkWrapper>
+        <SectionHeader as="span">Where I work?</SectionHeader>
         <p>
-          The kind of projects that I have worked till now are in the domain of
-          Banking, Insurance, CRM and E-commerce.
-        </p>
-      </div>
-      <br />
-      <SectionHeader as="span">Github</SectionHeader>
-      <p>
-        You can check my{" "}
-        <Link href="https://github.com/bharat619">
-          Github<SiGithub></SiGithub>
-        </Link>
-        .
-      </p>
-      <p>
-        In case if you are interested about this site, its built using Gatsby.
-        The services to fetch the Instagram and Twitter posts are done using
-        serverless functions. You can find all the source code{" "}
-        <Link href="https://github.com/bharat619/bharat619.com">here</Link>
-      </p>
-      <br />
-      <br />
-      <div>
+          Currently I work with{" "}
+          <Link href="https://www.kiprosh.com">Kiprosh</Link>, a wonderful bunch
+          of folks who do pretty cool stuff!!
+        </p>{" "}
+        <br /> <br />
+        <SectionHeader as="span">
+          What Languages I have worked with?
+        </SectionHeader>
+        <p>I have worked with</p>
+        <ListWrapper>
+          <List>
+            <li>
+              <SiJavascript></SiJavascript> JavaScript
+            </li>
+            <li>
+              <SiRuby></SiRuby> Ruby
+            </li>
+            <li>
+              <IoLogoNodejs></IoLogoNodejs> NodeJS
+            </li>
+          </List>
+        </ListWrapper>
+        <br /> <br />
+        <SectionHeader as="span">
+          What Libraries and Frameworks I work with?
+        </SectionHeader>
+        <p>Focusing more onto the libaries / frameworks. I have used</p>
+        <ListWrapper>
+          <List>
+            <li>
+              <SiReact></SiReact> React
+            </li>
+            <li>
+              <IoLogoNodejs></IoLogoNodejs> Express
+            </li>
+            <li>
+              <SiRails></SiRails> Ruby on Rails
+            </li>
+          </List>
+          <List>
+            <li>
+              <SiNextDotJs></SiNextDotJs> NextJS
+            </li>
+            <li>
+              <SiGatsby></SiGatsby> Gatsby
+            </li>
+            <li>
+              <SiAzurefunctions></SiAzurefunctions> Lambda
+            </li>
+          </List>
+        </ListWrapper>
         <p>
-          Apart from that, I do like to explore on new tech stacks, improve my
-          technique and styles, write blogs...
+          Recently I have started working with <SiIonic></SiIonic>Ionic React.
+          Gotta say, Im lovin it...!
         </p>
-      </div>
-    </MyWorkWrapper>
+        <br />
+        <div>
+          <p>
+            The kind of projects that I have worked till now are in the domain
+            of Banking, Insurance, CRM and E-commerce.
+          </p>
+        </div>
+        <br />
+        <SectionHeader as="span">Github</SectionHeader>
+        <p>
+          You can check my{" "}
+          <Link href="https://github.com/bharat619">
+            Github<SiGithub></SiGithub>
+          </Link>
+          .
+        </p>
+        <p>
+          In case if you are interested about this site, its built using Gatsby.
+          The services to fetch the Instagram and Twitter posts are done using
+          serverless functions. You can find all the source code{" "}
+          <Link href="https://github.com/bharat619/bharat619.com">here</Link>
+        </p>
+        <br />
+        <br />
+        <div>
+          <p>
+            Apart from that, I do like to explore on new tech stacks, improve my
+            technique and styles, write blogs...
+          </p>
+        </div>
+      </MyWorkWrapper>
+    </>
   );
 }
