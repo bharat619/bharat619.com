@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 
 import styled from "styled-components";
 import Header from "./styles/Heading";
-import pdf from '../static/resume.pdf'
+import pdf from "../static/resume.pdf";
 
 const NavContainer = styled.div`
   display: grid;
@@ -19,6 +19,11 @@ const NavContainer = styled.div`
     &:hover {
       cursor: pointer;
       --rotate: 5deg;
+    }
+    @media (max-width: 600px) {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 0;
     }
   }
 `;
@@ -36,6 +41,7 @@ const Nav = styled.nav`
       --columns: 2;
     }
     display: grid;
+    justify-items: center;
     grid-template-columns: repeat(var(--columns), 1fr);
     align-content: center;
     -webkit-box-shadow: 2px -8px 38px -20px rgba(0, 0, 0, 0.75);
@@ -91,7 +97,7 @@ export default function () {
             </Link>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/my-work">
               <Header as="span">What I work</Header>
             </Link>
           </li>
