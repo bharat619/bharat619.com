@@ -102,7 +102,7 @@ export default function () {
             </Link>
           </li>
           <li>
-            <a href={pdf} target="_blank">
+            <a href={pdf} target="_blank" rel="noreferrer">
               <Header as="span">My Resume</Header>
             </a>
           </li>

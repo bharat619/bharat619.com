@@ -73,6 +73,7 @@ export default function Instagram() {
           href="https://www.instagram.com/one_armed_wolf_/"
           target="_blank"
           className="mark"
+          rel="noreferrer"
         >
           <p>
             &nbsp; <FaInstagram /> &nbsp; @one_armed_wolf_ &nbsp;
@@ -91,6 +92,7 @@ export default function Instagram() {
         href="https://www.instagram.com/one_armed_wolf_/"
         target="_blank"
         className="mark"
+        rel="noreferrer"
       >
         <p>
           &nbsp; <FaInstagram /> &nbsp; @one_armed_wolf_ &nbsp;
@@ -99,7 +101,7 @@ export default function Instagram() {
 
       <GridStyle>
         {igPosts.map((post) => (
-          <a href={post.url} key={post.id} target="_blank">
+          <a href={post.url} key={post.id} target="_blank" rel="noreferrer">
             <img
               src={`https://images.weserv.nl/?url=${encodeURIComponent(
                 post.thumbnail

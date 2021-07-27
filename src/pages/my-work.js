@@ -10,6 +10,7 @@ import {
   SiAzurefunctions,
   SiIonic,
   SiGithub,
+  SiTypescript,
 } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io";
 
@@ -73,9 +74,17 @@ export default function MyWork() {
         <SectionHeader as="span">Where I work?</SectionHeader>
         <p>
           Currently I work with{" "}
-          <Link href="https://www.kiprosh.com">Kiprosh</Link>, a wonderful bunch
-          of folks who do pretty cool stuff!!
+          <Link target="_blank" href="https://www.encora.com/">
+            Encora
+          </Link>
+          , a wonderful bunch of folks who do pretty cool stuff!!
         </p>{" "}
+        <p>
+          Working on the product{" "}
+          <Link target="_blank" href="https://www.bugcrowd.com/">
+            Bugcrowd
+          </Link>
+        </p>
         <br /> <br />
         <SectionHeader as="span">
           What Languages I have worked with?
@@ -127,6 +136,10 @@ export default function MyWork() {
           Recently I have started working with <SiIonic></SiIonic>Ionic React.
           Gotta say, Im lovin it...!
         </p>
+        <p>
+          Started to get slightly inclined towards <SiTypescript /> Typescript
+          these days.
+        </p>
         <br />
         <div>
           <p>
@@ -150,12 +163,13 @@ export default function MyWork() {
           <Link href="https://github.com/bharat619/bharat619.com">here</Link>
         </p>
         <br />
-        <br />
         <div>
           <p>
             Apart from that, I do like to explore on new tech stacks, improve my
-            technique and styles, write blogs...
+            technique and styles, write blogs, play games, drink coffee,
+            music...
           </p>
+          You get the point right 😅
         </div>
       </MyWorkWrapper>
     </>
