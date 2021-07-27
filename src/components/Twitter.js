@@ -86,6 +86,7 @@ export default function () {
           href="https://twitter.com/bharat619_hegde"
           target="_blank"
           className="mark"
+          rel="noreferrer"
         >
           <p>
             &nbsp; <FaTwitter /> &nbsp; @bharat619_hegde &nbsp;
@@ -103,6 +104,7 @@ export default function () {
         href="https://twitter.com/bharat619_hegde"
         target="_blank"
         className="mark"
+        rel="noreferrer"
       >
         <p>
           &nbsp; <FaTwitter /> &nbsp; @bharat619_hegde &nbsp;
@@ -118,6 +120,7 @@ export default function () {
                 <a
                   className="tweet"
                   target="_blank"
+                  rel="noreferrer"
                   href={`https://twitter.com/bharat619_hegde/status/${tweet.id_str}`}
                 >
                   {tweet.text.slice(0, 100)}...

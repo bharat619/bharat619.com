@@ -36,6 +36,10 @@ const Heading = styled(HeaderStyle)`
   transform: none !important;
 `;
 
+const UL = styled.ul`
+  line-height: 2;
+`;
+
 export default function Uses() {
   return (
     <>
@@ -51,51 +55,33 @@ export default function Uses() {
         <Heading as="h3">
           <span>Laptop</span>
         </Heading>
-        <p>
-          I use a <b>MacBook Pro</b> 13" 2016 model as primary system.
-          <ul>
-            <li>1.2 Ghz Intel i5</li>
-            <li>256GB flash storage</li>
-          </ul>
-        </p>
-        <p>
-          I use a <b>ASUS Windows laptop</b> as a backup machine (and to play
-          games YES..!! I am a gamer as well 🎮)
-          <ul>
-            <li>2.8Ghz Intel i9</li>
-            <li>Windows 10, 1TB HDD</li>
-            <li>NVIDIA GTX 1080 4GB</li>
-          </ul>
-        </p>
-        <ul></ul>
-
+        I use a <b>MacBook Pro</b> 16" 2019 model as primary system.
+        <UL>
+          <li>2.6 GHz Intel Core i7</li>
+          <li>500GB flash storage</li>
+        </UL>
         <Heading as="h3">
           <span>Editor and Terminal</span>
         </Heading>
-        <p>
-          <ul>
-            <li>I use Visual Studio Code editor</li>
-            <li>
-              I use <b>Cobalt2</b> theme for my VS Code
-            </li>
-            <li>
-              I use <b>iterm2</b> as terminal in my mac and use <i>oh-my-zsh</i>{" "}
-              with it
-            </li>
-            <li>
-              For my windows, I use the default <b>ubuntu</b> shell
-            </li>
-          </ul>
-        </p>
-
+        <UL>
+          <li>I use Visual Studio Code editor</li>
+          <li>
+            I use <b>Cobalt2</b> theme for my VS Code
+          </li>
+          <li>
+            I use <b>Hyper</b> as terminal and use <i>oh-my-zsh</i> with it
+          </li>
+        </UL>
         <Heading as="h3">
           <span>Some useful extensions</span>
         </Heading>
-        <p>
-          Apart from a lot of <i>DevTools</i> kinda extensions, these are some
-          interesting browser extensions that I really like, and they are pretty
-          handy sometimes.
-          <ul>
+        <>
+          <p>
+            Apart from a lot of <i>DevTools</i> kinda extensions, these are some
+            interesting browser extensions that I really like, and they are
+            pretty handy sometimes.
+          </p>
+          <UL>
             <li>
               <u>
                 <a href="https://chrome.google.com/webstore/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc">
@@ -139,8 +125,8 @@ export default function Uses() {
               Great measurement tool for all the dimensions, positions and other
               page measurement shinanigans
             </li>
-          </ul>
-        </p>
+          </UL>
+        </>
       </UsesWrapper>
     </>
   );

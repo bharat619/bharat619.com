@@ -1,35 +1,56 @@
 require("isomorphic-fetch");
+const fs = require("fs");
 
-const cached_data = {
-  posts: null,
-};
+const { IgApiClient } = require("instagram-private-api");
 
-const query = `https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"2157021316","first":"6", "after":""}`;
+async function instagramData() {
+  const ig = new IgApiClient();
 
-const loadIgPosts = async () => {
-  let igPosts = null;
-  if (!cached_data.posts) {
-    const response = await fetch(query).then((res) => res.json());
-    igPosts = response.data.user.edge_owner_to_timeline_media.edges.map(
-      (edge) => ({
-        id: edge.node.id,
-        thumbnail: edge.node.thumbnail_resources[4].src,
-        url: `https://instagram.com/p/${edge.node.shortcode}`,
-        alt: edge.node.text,
-      })
-    );
-    cached_data.posts = igPosts;
+  ig.state.generateDevice(process.env.GATSBY_INSTAGRAM_USERNAME);
+  await ig.simulate.preLoginFlow();
+  const loggedInUser = await ig.account.login(
+    process.env.GATSBY_INSTAGRAM_USERNAME,
+    process.env.GATSBY_INSTAGRAM_PASSWORD
+  );
+  process.nextTick(async () => await ig.simulate.postLoginFlow());
+  const userFeed = ig.feed.user(loggedInUser.pk);
+  const myPostsFirstPage = await userFeed.items();
+  const posts = myPostsFirstPage.slice(0, 10).map((post) => {
+    const url = post.image_versions2.candidates[0];
+
+    return {
+      id: post.pk,
+      thumbnail: url && url.url,
+      url: `https://instagram.com/p/${post.code}`,
+    };
+  });
+  return posts;
+}
+
+async function fetchAndCacheInstagramData() {
+  const instaData = await instagramData();
+  const data = { data: instaData, loadedAt: Date.now() };
+  fs.writeFileSync("./data.json", JSON.stringify(data, null, 2), "utf-8");
+  return data;
+}
+
+async function getPosts() {
+  const fileData = JSON.parse(fs.readFileSync("./data.json"));
+  const loadedAt = fileData.loadedAt || 0;
+  const time = Date.now() - loadedAt;
+  if (time >= 1800000) {
+    return await fetchAndCacheInstagramData();
   }
-
-  return cached_data.posts;
-};
+  return fileData;
+}
 
 exports.handler = async (event, context, callback) => {
-  return {
+  const posts = await getPosts();
+  callback(null, {
     statusCode: 200,
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(await loadIgPosts()),
-  };
+    body: JSON.stringify(posts.data),
+  });
 };

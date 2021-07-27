@@ -124,10 +124,18 @@ const IndexPage = () => {
             <span className="title">Bharat Hegde.</span>
           </div>
           <div className="fullstack">
-            Your friendly neighbourhood <b>Fullstack-Dev</b> <span>👨‍💻</span>
+            Your friendly neighbourhood <b>Fullstack-Dev</b>{" "}
+            <span role="img" aria-label="Coder">
+              👨‍💻
+            </span>
           </div>
 
-          <div className="content-item">I'm from India 🇮🇳</div>
+          <div className="content-item">
+            I'm from India{" "}
+            <span role="img" aria-label="India">
+              🇮🇳
+            </span>
+          </div>
 
           <div className="content-item">
             It's been about {years} years since I started working or about{" "}
