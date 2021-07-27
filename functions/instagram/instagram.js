@@ -30,7 +30,11 @@ async function instagramData() {
 async function fetchAndCacheInstagramData() {
   const instaData = await instagramData();
   const data = { data: instaData, loadedAt: Date.now() };
-  fs.writeFileSync("./data.json", JSON.stringify(data, null, 2), "utf-8");
+  fs.writeFileSync(
+    `${__dirname}/data.json`,
+    JSON.stringify(data, null, 2),
+    "utf-8"
+  );
   return data;
 }
 
