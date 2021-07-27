@@ -35,7 +35,7 @@ async function fetchAndCacheInstagramData() {
 }
 
 async function getPosts() {
-  const fileData = JSON.parse(fs.readFileSync("./data.json"));
+  const fileData = JSON.parse(fs.readFileSync(`${__dirname}/data.json`));
   const loadedAt = fileData.loadedAt || 0;
   const time = Date.now() - loadedAt;
   if (time >= 1800000) {
