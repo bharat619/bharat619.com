@@ -30,22 +30,22 @@ async function instagramData() {
 async function fetchAndCacheInstagramData() {
   const instaData = await instagramData();
   const data = { data: instaData, loadedAt: Date.now() };
-  fs.writeFileSync(
-    `${__dirname}/data.json`,
-    JSON.stringify(data, null, 2),
-    "utf-8"
-  );
+  fs.writeFileSync(`/tmp/data.json`, JSON.stringify(data, null, 2), "utf-8");
   return data;
 }
 
 async function getPosts() {
-  const fileData = JSON.parse(fs.readFileSync(`${__dirname}/data.json`));
-  const loadedAt = fileData.loadedAt || 0;
-  const time = Date.now() - loadedAt;
-  if (time >= 1800000) {
+  if (fs.existsSync(`/tmp/data.json`)) {
+    const fileData = JSON.parse(fs.readFileSync(`/tmp/data.json`));
+    const loadedAt = fileData.loadedAt || 0;
+    const time = Date.now() - loadedAt;
+    if (time >= 1800000) {
+      return await fetchAndCacheInstagramData();
+    }
+    return fileData;
+  } else {
     return await fetchAndCacheInstagramData();
   }
-  return fileData;
 }
 
 exports.handler = async (event, context, callback) => {
